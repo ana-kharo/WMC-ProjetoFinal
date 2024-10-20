@@ -26,8 +26,6 @@ from django.conf.urls.static import static
 from home.views import home
 #Importando função que renderiza o formulário para criação de pets e usa do método post para criá-los  
 from cadastro_pet.views import criar_pet
-#Importar função que renderiza 
-from home.views import pets_lista
 
 
 
@@ -37,8 +35,7 @@ urlpatterns = [
     path('cadastrar-pet/', criar_pet),
     path('api-auth/', include('rest_framework.urls')),
     path('api/', include('rest_api.urls', namespace='api')),
-    path('hello_world/', hello_world, name='hello_world_api'),
-    path('pets/', pets_lista, name='pets_lista'),  
+    path('hello_world/', hello_world, name='hello_world_api'), #Teste
 ]
 
 
