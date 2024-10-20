@@ -6,18 +6,8 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Django
-*.log
-db.sqlite3
-media/
-staticfiles/
-static/
-
 # Environment
-.env
-venv/
-env/
-
+.venv/*
 # VS Code (se você usar Visual Studio Code)
 .vscode/
 
