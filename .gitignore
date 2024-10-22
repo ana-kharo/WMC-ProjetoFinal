@@ -8,7 +8,6 @@ __pycache__/
 
 # Environment
 .venv/*
-# VS Code (se você usar Visual Studio Code)
 .vscode/
 
 

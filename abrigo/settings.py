@@ -27,8 +27,6 @@ INSTALLED_APPS = [
     'gestao_adocao',
     'home',
     'bootstrap5',
-    'rest_framework',
-    'rest_api',
 ]
 
 MIDDLEWARE = [
@@ -106,8 +104,8 @@ STATICFILES_DIRS = [
 ]
 
 # Configuração para arquivos de mídia (imagens, uploads)
-MEDIA_URL = '/imagens/'  # URL base para acessar as imagens
-MEDIA_ROOT = BASE_DIR / 'imagens'  # Diretório onde as imagens estão armazenadas
+MEDIA_URL = '/fotos-pets/'  # URL base para acessar as imagens
+MEDIA_ROOT = BASE_DIR / 'fotos-pets'  # Diretório onde as imagens estão armazenadas
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

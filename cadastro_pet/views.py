@@ -1,6 +1,6 @@
-from django.shortcuts import render
-from django.views.decorators.csrf import csrf_protect
 import uuid
+from django.shortcuts import render #para renderizar html
+from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse 
 from cadastro_pet.forms import PetForm
 from cadastro_pet.models import Pet
