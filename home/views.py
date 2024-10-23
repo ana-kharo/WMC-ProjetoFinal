@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from cadastro_pet.models import Pet
+
+from cadastro_pet.models import CadastroAnimal
 
 def home(request):
-    pets = Pet.objects.filter(adotado=False)  # Faz filtragem por entre os Pets não adotados
-    return render(request, 'home.html', {'pets': pets})
+    animais = CadastroAnimal.objects.filter(disponivel = True)
+    
+    return render(request, 'home.html', {'animais': animais})

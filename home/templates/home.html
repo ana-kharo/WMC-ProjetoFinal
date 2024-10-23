@@ -1,6 +1,9 @@
 <!-- Vou extender a base.html para home -->
 {% extends 'base.html' %}
+
+{% load bootstrap5 %}
 {% load static %}
+{% bootstrap_css %}
 
 <!-- Bloco de conteúdo da nossa Home. -->
 {% block content %}
@@ -33,25 +36,32 @@
 <div class="container">
     <div class="row">
         <!-- Loop pelos pets disponíveis -->
-        {% for pet in pets  %}
-            <div class="col-sm-4">
-                <div class="card">
-                    <a href="{% url 'detalhes_pet' pet.id %}" target="_blank">
-                    <img src="{{ pet.imagem }}" class="card-img" alt="Imagem de {{ pet.nome_pet }}">
-                    </a>
-                    <div class="card-body">
-                            <h5 class="card-title">{{ pet.nome_pet }}</h5>
-                        <p class="card-text">{{ pet.idade_pet }} anos, {{ pet.raca_pet }}</p>
-                    </div>
+        {% for animal in animais %}
+        {% if animal.galeria.first %}
+        <div class="col-sm-4">
+            <div class="card">
+                <a href="{% url 'detalhe_animal' animal.id %}" target="_blank">
+                    <img src="{{ animal.galeria.first.imagem.url }}" class="card-img"
+                        alt="Imagem de {{ animal.nome|capfirst }}">
+                    {% else %} 
+                    <img src="{% static 'img/default.png' %}" class="card-img-top"
+                        alt="Imagem de {{ animal.nome|capfirst }}" style="height: 150px; object-fit: cover;">
+                    {% endif %}
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ animal.nome|capfirst }}</h5>
+                    <p class="card-text">{{ animal.idade }} anos, {{ animal.raca }}</p>
                 </div>
             </div>
+        </div>
         {% empty %}
-            <p class="text-center">Nenhum animal disponível para adoção no momento.</p>
+        <p class="text-center">Nenhum animal cadastrado.</p>
         {% endfor %}
     </div>
-  </div>
-    
-  <!-- Card de apoio -->
+</div>
+
+
+<!-- Card de apoio -->
 <div class="container-gato">
     <div class="textoapoio">
         <h3>Apoie o nosso</h3>
