@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,7 +88,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -104,8 +105,10 @@ STATICFILES_DIRS = [
 ]
 
 # Configuração para arquivos de mídia (imagens, uploads)
-MEDIA_URL = '/fotos-pets/'  # URL base para acessar as imagens
-MEDIA_ROOT = BASE_DIR / 'fotos-pets'  # Diretório onde as imagens estão armazenadas
+MEDIA_URL = 'media/' # URL base para acessar as imagens
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Diretório onde as imagens estão armazenadas
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

@@ -2,9 +2,12 @@
 *.pyc
 *.pyo
 *.pyd
-__pycache__/
 *.pyo
 *.pyd
+
+#Cache do py no vs code
+
+*\__pycache__\*
 
 # Environment
 .venv/*
@@ -15,6 +18,6 @@ __pycache__/
 Thumbs.db
 
 # Arquivos de migração (apenas em desenvolvimento)
-*/migrations/*
+# */migrations/* <<-- para subir as migrações, pois deu erro para mim
 
 Lib

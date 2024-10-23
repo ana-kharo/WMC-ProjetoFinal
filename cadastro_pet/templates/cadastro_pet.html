@@ -5,15 +5,27 @@
 <div class="cadastro-pet-body">
     <div class="cadastro-pet-container">
         <h1 class="cadastro-pet-titulo">Cadastro de Novo Pet</h1>
-        {% if success %}
-        <p class="alert alert-success">Pet cadastrado com sucesso!</p>
-        {% endif %}
+        {% if sucesso %}
+    <div class="alert alert-success" role="alert">
+        Animal cadastrado com sucesso!
+    </div>
+    {% endif %}
     
-        <form method="POST" enctype="multipart/form-data" class="cadastro-pet-form">
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    
+        <form method="POST"  enctype="multipart/form-data" class="cadastro-pet-form">
             {% csrf_token %} 
             <!-- Dá mais segurança ao formulário contra ataques entre sites. O que o 
              usuário inserir aqui, por exemplo, seria enviado a outro site.  -->
-            <div class="form">{{ form.as_p }}</div>
+            <div class="form">{{ form_animal.as_p }}</div>
+
+            <label for="animal_imagem">Selecione as imagens:</label>
+                <input class="form-control" type="file" name="animal_imagem" multiple required>
+            
             <button type="submit" class="cadastro-pet-btn">SALVAR PET</button>
         </form>
     </div>
